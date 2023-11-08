@@ -11,7 +11,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController nomeController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController telefoneController = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,29 +31,30 @@ class _RegisterPageState extends State<RegisterPage> {
               TextField(
                 controller: nomeController,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Justin Case'
-                  ),
+                    border: OutlineInputBorder(), hintText: 'Justin Case'),
               ),
               Text('Email'),
               SizedBox(height: 5),
               TextField(
                 controller: emailController,
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'justincase@gmail.com'
-                  ),
+                    border: OutlineInputBorder(),
+                    hintText: 'justincase@gmail.com'),
               ),
               Text('Telefone'),
               SizedBox(height: 5),
               TextField(
                 controller: telefoneController,
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: '555-555-555'
-                  ),
+                    border: OutlineInputBorder(), hintText: '555-555-555'),
               ),
-              ElevatedButton(onPressed: (){}, child: Text('Cadastrar-se')),
+              ElevatedButton(
+                  onPressed: () {
+                    print("Nome: ${nomeController.text}");
+                    print("Email: ${emailController.text}");
+                    print("Telefone: ${telefoneController.text}");
+                  },
+                  child: Text('Cadastrar-se')),
             ],
           ),
         ),
