@@ -1,3 +1,4 @@
+import 'package:crud_flutter/app/service/service.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -12,6 +13,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController telefoneController = TextEditingController();
 
+  Service service = Service();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,13 +50,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), hintText: '555-555-555'),
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    print("Nome: ${nomeController.text}");
-                    print("Email: ${emailController.text}");
-                    print("Telefone: ${telefoneController.text}");
-                  },
-                  child: Text('Cadastrar-se')),
+              ElevatedButton(onPressed: () {
+                service.saveUser(
+                  nomeController.text,
+                  emailController.text,
+                  telefoneController.text);
+              }, child: Text('Cadastrar-se')),
             ],
           ),
         ),
