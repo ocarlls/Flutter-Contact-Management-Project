@@ -19,7 +19,6 @@ class UsuarioRepository implements IUsuarioRepository {
     final response = await client.get(url: "http://192.168.0.4:8080/usuario");
     if (response.statusCode == 200) {
       final List<Usuario> users = [];
-
       final body = jsonDecode(response.body);
       body.map((item) {
         final Usuario user = Usuario.fromMap(item);
