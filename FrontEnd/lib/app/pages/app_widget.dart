@@ -2,7 +2,7 @@ import 'package:crud_flutter/app/pages/register/register_page.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
-  @override
+    @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
